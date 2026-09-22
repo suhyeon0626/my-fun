@@ -47,3 +47,168 @@ html {
     font-size: 17px;
   }
 }
+
+/* A continuous sky-to-midnight palette, independent of section height. */
+:root {
+  --paper: #f1f7fc;
+  --ink: #172d48;
+  --muted: #2d435f;
+  --line: #b6c9dc;
+  --green: #284b72;
+}
+
+body {
+  background: #09172f;
+}
+
+.site-header {
+  box-shadow: 0 0 0 100vmax var(--paper);
+  clip-path: inset(0 -100vmax);
+}
+
+.hero,
+.story,
+.tips,
+.invitation {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero::before,
+.story::before,
+.tips::before,
+.invitation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--section-background);
+}
+
+/* Extend each gradient through the side margins without horizontal overflow. */
+.hero::before,
+.story::before,
+.tips::before,
+.invitation::before {
+  border-image: var(--section-background) fill 0 / 0 / 0 100vmax;
+}
+
+.hero {
+  --section-background: linear-gradient(#f1f7fc, #d0e0ef);
+}
+
+.story {
+  --section-background: linear-gradient(#d0e0ef, #9eb8d3);
+}
+
+h1 span,
+.little-star,
+.handwritten {
+  color: #284461;
+}
+
+.brand-en,
+.nav-cta,
+.text-link {
+  border-color: #849eb9;
+}
+
+.site-header nav a:hover {
+  color: #1b568c;
+}
+
+.gallery-section {
+  background: linear-gradient(#9eb8d3, #537498);
+  color: #10243e;
+}
+
+.gallery-section .section-heading > p,
+#photo-count {
+  color: #243d5b;
+}
+
+.filters button {
+  background: #e6eff8;
+  border-color: #59799b;
+  color: #172d48;
+}
+
+.filters button.active {
+  background: #18385d;
+  border-color: #18385d;
+  color: #ffffff;
+}
+
+.filters button:hover {
+  border-color: #10243e;
+}
+
+.filters button span {
+  opacity: 1;
+}
+
+.card-caption,
+.card-caption > span,
+.photo-card > p,
+.gallery-note {
+  color: #ffffff;
+}
+
+.card-caption,
+.photo-card > p,
+.gallery-note {
+  background: #203b5c;
+}
+
+.expand {
+  color: #172d48;
+  background: #f1f7fc;
+}
+
+.tips {
+  --section-background: linear-gradient(#537498, #152b49);
+  color: #ffffff;
+}
+
+.tips .section-heading > p,
+.tip-grid p,
+.tip-number {
+  color: #ffffff;
+}
+
+.tip-grid article {
+  border-color: #a0bad4;
+}
+
+.invitation {
+  --section-background: linear-gradient(#152b49, #09172f);
+  background: transparent;
+  color: #f4f8ff;
+}
+
+.invitation-star,
+.invitation > p:not(.eyebrow):not(.mission),
+.mission,
+footer p {
+  color: #d0e0f3;
+}
+
+.invitation button {
+  background: #d6e9fc;
+  color: #142d4b;
+  border-color: #d6e9fc;
+}
+
+.invitation button:hover {
+  background: #ffffff;
+}
+
+footer {
+  color: #edf5ff;
+  border-color: #48617f;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline-color: #c18417;
+}
